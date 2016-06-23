@@ -1,63 +1,29 @@
 <html>
 
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<meta http-equiv="Content-Type" content="text/html; charset=utf8">
 <meta name="GENERATOR" content="Microsoft FrontPage 4.0">
 <meta name="ProgId" content="FrontPage.Editor.Document">
-<title>ÒòÎªJSP×îÖÕÊÇÒª×ª»»ÎªServletÀ´ÔËĞĞµÄ</title>
+<title>å› ä¸ºJSPæœ€ç»ˆæ˜¯è¦è½¬æ¢ä¸ºServletæ¥è¿è¡Œçš„</title>
 <meta name="Microsoft Theme" content="blank 000, default">
 <meta name="Microsoft Border" content="tlb, default">
 </head>
 
-<body bgcolor="#FFFFFF" text="#000000" link="#999999" vlink="#990000" alink="#666666"><!--msnavigation--><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td><!--mstheme--><font face="ËÎÌå">
+<body bgcolor="#FFFFFF" text="#000000" link="#999999" vlink="#990000" alink="#666666"><!--msnavigation--><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td><!--mstheme--><font face="å®‹ä½“">
 
-<p align="center"><font size="6"><strong><img src="_derived/jsp2servlet.htm_cmp_blank000_bnr.gif" width="600" height="60" border="0" alt="JSPÓëServlet"></strong></font><br>
-<a href="example_time.htm"><img src="../_derived/back_cmp_blank000_back.gif" width="100" height="20" border="0" alt="ÉÏÒ»Ò³" align="middle"></a> <a href="../index.htm"><img src="../_derived/home_cmp_blank000_home.gif" width="100" height="20" border="0" alt="Ö÷Ò³" align="middle"></a> <a href="index.htm"><img src="../_derived/up_cmp_blank000_up.gif" width="100" height="20" border="0" alt="ÉÏÒ»²ã" align="middle"></a></p>
+<p align="center"><font size="6"><strong><img src="_derived/jsp2servlet.htm_cmp_blank000_bnr.gif" width="600" height="60" border="0" alt="JSPä¸Servlet"></strong></font><br>
+<a href="example_time.htm"><img src="../_derived/back_cmp_blank000_back.gif" width="100" height="20" border="0" alt="ä¸Šä¸€é¡µ" align="middle"></a> <a href="../index.htm"><img src="../_derived/home_cmp_blank000_home.gif" width="100" height="20" border="0" alt="ä¸»é¡µ" align="middle"></a> <a href="index.htm"><img src="../_derived/up_cmp_blank000_up.gif" width="100" height="20" border="0" alt="ä¸Šä¸€å±‚" align="middle"></a></p>
 
-<!--mstheme--></font></td></tr><!--msnavigation--></table><!--msnavigation--><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td valign="top" width="1%"><!--mstheme--><font face="ËÎÌå">
+<!--mstheme--></font></td></tr><!--msnavigation--></table><!--msnavigation--><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td valign="top" width="1%"><!--mstheme--><font face="å®‹ä½“">
 
 
 
-<!--mstheme--></font></td><td valign="top" width="24"></td><!--msnavigation--><td valign="top"><!--mstheme--><font face="ËÎÌå">
+<!--mstheme--></font></td><td valign="top" width="24"></td><!--msnavigation--><td valign="top"><!--mstheme--><font face="å®‹ä½“">
 
-<p>ÒòÎªJSP×îÖÕÊÇÒª×ª»»ÎªServletÀ´ÔËĞĞµÄ£¬ÄÇÃ´ÎÒÃÇÀ´¿´ÏÂÃæµÄÁ½¸ö½Å±¾£º</p>
-<p><b>ÏÂÃæÕâ¸öJSPÒ³Ãæ£º</b></p>
+<p>å› ä¸ºJSPæœ€ç»ˆæ˜¯è¦è½¬æ¢ä¸ºServletæ¥è¿è¡Œçš„ï¼Œé‚£ä¹ˆæˆ‘ä»¬æ¥çœ‹ä¸‹é¢çš„ä¸¤ä¸ªè„šæœ¬ï¼š</p>
+<p><b>ä¸‹é¢è¿™ä¸ªJSPé¡µé¢ï¼š</b></p>
 <p><i><font face="Comic Sans MS">&lt;html&gt;<br>
 Hello World!&lt;br&gt;<br>
-&lt;jsp:useBean id=&quot;clock&quot; class=¡°calendar.JspCalendar¡± /&gt;<br>
+&lt;jsp:useBean id=&quot;clock&quot; class=â€œcalendar.JspCalendarâ€ /&gt;<br>
 Today is<br>
 &lt;ul&gt;<br>
-£ £ &lt;li&gt;Day of month: &lt;%= clock.getDayOfMonth() %&gt;&lt;/li&gt;<br>
-£ £ &lt;li&gt;Year: &lt;%= clock.getYear() %&gt;&lt;/li&gt;<br>
-&lt;/ul&gt;<br>
-&lt;/html&gt;</font></i></p>
-<p><b>Ïàµ±ÓÚÕâ¸öServlet£º</b></p>
-<p><i><font face="Comic Sans MS">public class HelloServlet extends HttpServlet {<br>
-£ £ public void doGet(HttpServletRequest request,HttpServletResponse response) 
-{<br>
-£ £ £ £ response.setContentType(¡°text/plain¡±);<br>
-£ £ £ £ PrintWriter out = response.getWriter();<br>
-<br>
-£ £ £ £ out.println(¡°&lt;html&gt;¡±);<br>
-£ £ £ £ out.println(¡°Hello World!¡±);<br>
-£ £ £ £ out.println(¡°&lt;br&gt;¡±);<br>
-<br>
-£ £ £ £ JspCalendar clock = new JspCalendar();<br>
-<br>
-£ £ £ £ out.println(¡°Today is¡±);<br>
-£ £ £ £ out.println(¡°&lt;ul&gt;¡±);<br>
-£ £ £ £ out.println(¡°&lt;li&gt;Day of month: ¡°);<br>
-£ £ £ £ out.println(clock.getDayOfMonth());<br>
-£ £ £ £ out.println(¡°&lt;/ul&gt;¡±);<br>
-£ £ £ £ out.println(¡°&lt;/html&gt;¡±);<br>
-£ £ }<br>
-}</font></i></p>
-¡¡
-
-<!--mstheme--></font><!--msnavigation--></td></tr><!--msnavigation--></table><!--msnavigation--><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td><!--mstheme--><font face="ËÎÌå">
-
-<p align="right">
-
-<!--mstheme--></font></td></tr><!--msnavigation--></table></body>
-
-</html>

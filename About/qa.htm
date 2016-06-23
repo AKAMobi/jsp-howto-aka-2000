@@ -2,7 +2,7 @@
 
 <head>
 <meta http-equiv="Content-Language" content="zh-cn">
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<meta http-equiv="Content-Type" content="text/html; charset=utf8">
 <meta name="GENERATOR" content="Microsoft FrontPage 4.0">
 <meta name="ProgId" content="FrontPage.Editor.Document">
 <title>Q/A</title>
@@ -10,20 +10,20 @@
 <meta name="Microsoft Border" content="tlb, default">
 </head>
 
-<body bgcolor="#FFFFFF" text="#000000" link="#999999" vlink="#990000" alink="#666666"><!--msnavigation--><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td><!--mstheme--><font face="宋体">
+<body bgcolor="#FFFFFF" text="#000000" link="#999999" vlink="#990000" alink="#666666"><!--msnavigation--><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td><!--mstheme--><font face="瀹嬩綋">
 
 <p align="center"><font size="6"><strong><img src="_derived/qa.htm_cmp_blank000_bnr.gif" width="600" height="60" border="0" alt="Q/A"></strong></font><br>
-<a href="links.htm"><img src="../_derived/back_cmp_blank000_back.gif" width="100" height="20" border="0" alt="上一页" align="middle"></a> <a href="../index.htm"><img src="../_derived/home_cmp_blank000_home.gif" width="100" height="20" border="0" alt="主页" align="middle"></a> <a href="index.htm"><img src="../_derived/up_cmp_blank000_up.gif" width="100" height="20" border="0" alt="上一层" align="middle"></a></p>
+<a href="links.htm"><img src="../_derived/back_cmp_blank000_back.gif" width="100" height="20" border="0" alt="涓婁竴椤�" align="middle"></a> <a href="../index.htm"><img src="../_derived/home_cmp_blank000_home.gif" width="100" height="20" border="0" alt="涓婚〉" align="middle"></a> <a href="index.htm"><img src="../_derived/up_cmp_blank000_up.gif" width="100" height="20" border="0" alt="涓婁竴灞�" align="middle"></a></p>
 
-<!--mstheme--></font></td></tr><!--msnavigation--></table><!--msnavigation--><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td valign="top" width="1%"><!--mstheme--><font face="宋体">
+<!--mstheme--></font></td></tr><!--msnavigation--></table><!--msnavigation--><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td valign="top" width="1%"><!--mstheme--><font face="瀹嬩綋">
 
 
 
-<!--mstheme--></font></td><td valign="top" width="24"></td><!--msnavigation--><td valign="top"><!--mstheme--><font face="宋体">
+<!--mstheme--></font></td><td valign="top" width="24"></td><!--msnavigation--><td valign="top"><!--mstheme--><font face="瀹嬩綋">
 
-<p>这里是我遇到的一个很郁闷的问题，希望有人遇到过类似问题...</p>
-<p>这个问题我在Resin的maillist里面提的，所以只能copy/paste我这些乱七八糟的英文了。</p>
-<p>如果有人在今年年底前发现这个问题的原因，请mailto:<a href="mailto:zixia@yahoo.com">zixia@yahoo.com</a></p>
+<p>杩欓噷鏄垜閬囧埌鐨勪竴涓緢閮侀椃鐨勯棶棰橈紝甯屾湜鏈変汉閬囧埌杩囩被浼奸棶棰�...</p>
+<p>杩欎釜闂鎴戝湪Resin鐨刴aillist閲岄潰鎻愮殑锛屾墍浠ュ彧鑳絚opy/paste鎴戣繖浜涗贡涓冨叓绯熺殑鑻辨枃浜嗐��</p>
+<p>濡傛灉鏈変汉鍦ㄤ粖骞村勾搴曞墠鍙戠幇杩欎釜闂鐨勫師鍥狅紝璇穖ailto:<a href="mailto:zixia@yahoo.com">zixia@yahoo.com</a></p>
 <p><br>
 I use Linux Redhat6.2 with IBMJava2-SDK-13/Jikes1.12 Resin1.2.b2...<br>
 <br>
@@ -70,252 +70,4 @@ can scott give me some advice about void this things happen?<br>
 <br>
 ****************************************<br>
 <br>
-Sounds like a possible dead lock.Try doing a thread dump (CTRL+\ or<br>
-sending the process a QUIT signal) to see what lock it is possibly waiting<br>
-for.<br>
-<br>
-Calvin<br>
-<br>
-****************************************<br>
-<br>
-hi, Calvin,<br>
-<br>
-I try to killall -QUIT java but nothing happend...<br>
-can you kind enough to tell me how to do a thread dump?<br>
-great thanks... :P<br>
-<br>
-and, I found out the reason cause resin server freeze...<br>
-I use JDBC(thin driver) connect to Oracle8i(8.1.6)，<br>
-and I found a SQLException: java.sql.SQLException: Protocol violation<br>
-exist in the stderr.log...<br>
-<br>
-when this exception occured, the resin will freeze... faint...<br>
-<br>
-here's the log message, it may be help...<br>
-<br>
-ps. my jdbc driver for oracle is download from www.oracle.com<br>
-yesterday... is it a jdbc bug?<br>
-<br>
-=== BoardAccessBean.java ==============================================<br>
- 16 synchronized private boolean Get(BoardBean bd,ResultSet rs){<br>
- 17 try {<br>
- 18 int NOTP=bd.m_NumOfThisPage;<br>
- 19 for(int i=0;i&lt;NOTP;i++){<br>
- 20 
-bd.m_OutAutoID[NOTP-i]=rs.getInt(&quot;AutoID&quot;);<br>
- 21 
-bd.m_OutTitle[NOTP-i]=Utils.DB2Page(rs.getString(&quot;Title&quot;));<br>
- 22 
-bd.m_OutAccess[NOTP-i]=rs.getInt(&quot;Accessed&quot;);<br>
- 23 
-bd.m_OutOwner[NOTP-i]=Utils.DB2Page(rs.getString(&quot;Owner&quot;));<br>
- 24 
-bd.m_OutTitleClass[NOTP-i]=rs.getInt(&quot;TitleClass&quot;);<br>
- 25 
-bd.m_OutPostTime[NOTP-i]=rs.getInt(&quot;LastUpdate&quot;);<br>
- 26 //FIXME: Protocol Violation<br>
- 27 if(!rs.next())break;<br>
- ^^^^^^^^^^^^^^^^^^^ HERE!!<br>
- 28 }<br>
- 29 return true;<br>
- 30 }catch(Exception e){<br>
- 31 Utils.Log(e,&quot;&quot;);<br>
- 32 return false;<br>
- 33 }<br>
- 34 }<br>
-<br>
-... ...<br>
-<br>
-242 try{<br>
-243 Statement stmt = conn.createStatement();<br>
-244 stmt.setQueryTimeout(0);<br>
-245 Utils.Log(&quot;start select&quot;);<br>
-246 ResultSet rs = stmt.executeQuery(sql);<br>
-247 if (!rs.next()) {<br>
-248 stmt.close();<br>
-249 return false;<br>
-250 }<br>
-251 else {<br>
-252 Utils.Log(&quot;selected&quot;);<br>
-253 bd.m_PageNum=PN;<br>
-254 bd.m_ArticleNum=AN;<br>
-255 bd.m_LastPostTime=PostTime;<br>
-256 bd.m_CurPage=CP;<br>
-257 bd.m_OutStartNo=OSN;<br>
-258 bd.m_OutEndNo=OEN;<br>
-259 bd.m_NumOfThisPage=NOTP;<br>
-260 Get(bd,rs);<br>
-261 bd.m_OutMinID=bd.m_OutAutoID[1];<br>
-262 bd.m_OutMaxID=bd.m_OutAutoID[NOTP];<br>
-263 bd.m_CurArticle=OSN;<br>
-264 
-Utils.Log(&quot;OSN=&quot;+OSN+&quot;,NOTP=&quot;+NOTP);<br>
-265 //FIXME: Protocol Violation<br>
-266 stmt.close();<br>
- ^^^^^^^^^^^^^^^^ HERE!<br>
-267 return true;<br>
-268 }<br>
-269 }catch (Exception e){<br>
-270 Utils.Log(e,&quot;&quot;);<br>
-271 return false;<br>
-272 } finally {<br>
-273 try{conn.close();}catch(Exception e){}<br>
-274 }<br>
-<br>
-<br>
-=== stderr.log ======================================<br>
-<br>
-hu Oct 19 06:21:04 CST 2000: BoardNum=203<br>
-Thu Oct 19 06:21:04 CST 2000: BoardNum=203<br>
-Thu Oct 19 06:21:11 CST 2000: select count(*) from BoardFileList_TB where 
-IsDeleted=0 and BoardAutoID=86<br>
-Thu Oct 19 06:21:11 CST 2000: AN=4843<br>
-Thu Oct 19 06:21:11 CST 2000: select Max(LastUpdate) from BoardFileList_TB where 
-IsDeleted=0 and BoardAutoID=86<br>
-Thu Oct 19 06:21:11 CST 2000: AN=4843<br>
-Thu Oct 19 06:21:11 CST 2000: NOTP=20<br>
-Thu Oct 19 06:21:11 CST 2000: select * from (select * from (select * from 
-BoardFileList_TB where IsDeleted=0 and BoardAutoID=86 orde<br>
-r by AutoID) where rownum&lt;=4843 order by AutoID desc) where rownum&lt;=20<br>
-Thu Oct 19 06:21:11 CST 2000: start select<br>
-Thu Oct 19 06:21:11 CST 2000: selected<br>
-Thu Oct 19 06:21:11 CST 2000:<br>
-java.sql.SQLException: Protocol violation<br>
-at java.sql.SQLException.&lt;init&gt;(SQLException.java:45)<br>
-at oracle.jdbc.dbaccess.DBError.throwSqlException(DBError.java:114)<br>
-at oracle.jdbc.dbaccess.DBError.throwSqlException(DBError.java:156)<br>
-at oracle.jdbc.dbaccess.DBError.check_error(DBError.java:803)<br>
-at oracle.jdbc.ttc7.Oall7.receive(Oall7.java(Compiled Code))<br>
-at oracle.jdbc.ttc7.TTC7Protocol.doOall7(TTC7Protocol.java:1311)<br>
-at oracle.jdbc.ttc7.TTC7Protocol.fetch(TTC7Protocol.java:797)<br>
-at 
-oracle.jdbc.driver.OracleResultSetImpl.next(OracleResultSetImpl.java(Compiled 
-Code))<br>
-at com.bbser.board.BoardAccessBean.Get(BoardAccessBean.java:27)<br>
-at com.bbser.board.BoardAccessBean.ListArticle(BoardAccessBean.java:260)<br>
-at com.bbser.board.BoardBean.ListBySequence(BoardBean.java:82)<br>
-at _jsp._listarticle__jsp._jspService(_listarticle__jsp.java:97)<br>
-at com.caucho.jsp.JavaPage.service(JavaPage.java:89)<br>
-at com.caucho.jsp.JavaPage.subservice(JavaPage.java:83)<br>
-at com.caucho.jsp.Page.service(Page.java:303)<br>
-at com.caucho.jsp.Page.service(Page.java:303)<br>
-at com.caucho.server.http.Invocation.service(Invocation.java:230)<br>
-at 
-com.caucho.server.http.CacheInvocation.service(CacheInvocation.java:142)<br>
-at com.caucho.server.http.HttpRequest.handleRequest(HttpRequest.java:205)<br>
-at 
-com.caucho.server.http.HttpRequest.handleConnection(HttpRequest.java:144)<br>
-at com.caucho.server.TcpConnection.run(TcpConnection.java:133)<br>
-at java.lang.Thread.run(Thread.java:498)<br>
-Thu Oct 19 06:21:11 CST 2000: OSN=4824,NOTP=20<br>
-Thu Oct 19 06:21:11 CST 2000:<br>
-java.sql.SQLException: Protocol violation<br>
-at java.sql.SQLException.&lt;init&gt;(SQLException.java:45)<br>
-at oracle.jdbc.dbaccess.DBError.throwSqlException(DBError.java:114)<br>
-at oracle.jdbc.dbaccess.DBError.throwSqlException(DBError.java:156)<br>
-at oracle.jdbc.dbaccess.DBError.check_error(DBError.java:803)<br>
-at oracle.jdbc.ttc7.Oclose.receive(Oclose.java:130)<br>
-at oracle.jdbc.ttc7.TTC7Protocol.close(TTC7Protocol.java:493)<br>
-at oracle.jdbc.driver.OracleStatement.close(OracleStatement.java:467)<br>
-at com.bbser.board.BoardAccessBean.ListArticle(BoardAccessBean.java:266)<br>
-at com.bbser.board.BoardBean.ListBySequence(BoardBean.java:82)<br>
-at _jsp._listarticle__jsp._jspService(_listarticle__jsp.java:97)<br>
-at com.caucho.jsp.JavaPage.service(JavaPage.java:89)<br>
-at com.caucho.jsp.JavaPage.subservice(JavaPage.java:83)<br>
-at com.caucho.jsp.Page.service(Page.java:303)<br>
-at com.caucho.server.http.Invocation.service(Invocation.java:230)<br>
-at 
-com.caucho.server.http.CacheInvocation.service(CacheInvocation.java:142)<br>
-at com.caucho.server.http.HttpRequest.handleRequest(HttpRequest.java:205)<br>
-at 
-com.caucho.server.http.HttpRequest.handleConnection(HttpRequest.java:144)<br>
-at com.caucho.server.TcpConnection.run(TcpConnection.java:133)<br>
-at java.lang.Thread.run(Thread.java:498)<br>
-at com.caucho.server.TcpConnection.run(TcpConnection.java:133)<br>
-at java.lang.Thread.run(Thread.java:498)<br>
-Thu Oct 19 06:21:13 CST 2000: select count(*) from BoardFileList_TB where 
-IsDeleted=0 and BoardAutoID=86<br>
-Thu Oct 19 06:21:13 CST 2000: AN=4843<br>
-Thu Oct 19 06:21:13 CST 2000: select Max(LastUpdate) from BoardFileList_TB where 
-IsDeleted=0 and BoardAutoID=86<br>
-Thu Oct 19 06:21:13 CST 2000: AN=4843<br>
-Thu Oct 19 06:21:13 CST 2000: NOTP=20<br>
-Thu Oct 19 06:21:13 CST 2000: select * from (select * from (select * from 
-BoardFileList_TB where IsDeleted=0 and BoardAutoID=86 orde<br>
-r by AutoID) where rownum&lt;=4843 order by AutoID desc) where rownum&lt;=20<br>
-Thu Oct 19 06:21:13 CST 2000: start select<br>
-Thu Oct 19 06:21:14 CST 2000: selected<br>
-Thu Oct 19 06:21:14 CST 2000:<br>
-java.sql.SQLException: Protocol violation<br>
-at java.sql.SQLException.&lt;init&gt;(SQLException.java:45)<br>
-at oracle.jdbc.dbaccess.DBError.throwSqlException(DBError.java:114)<br>
-at oracle.jdbc.dbaccess.DBError.throwSqlException(DBError.java:156)<br>
-at oracle.jdbc.dbaccess.DBError.check_error(DBError.java:803)<br>
-at oracle.jdbc.ttc7.Oall7.receive(Oall7.java(Compiled Code))<br>
-at oracle.jdbc.ttc7.TTC7Protocol.doOall7(TTC7Protocol.java:1311)<br>
-at oracle.jdbc.ttc7.TTC7Protocol.fetch(TTC7Protocol.java:797)<br>
-at 
-oracle.jdbc.driver.OracleResultSetImpl.next(OracleResultSetImpl.java(Compiled 
-Code))<br>
-at com.bbser.board.BoardAccessBean.Get(BoardAccessBean.java:27)<br>
-at com.bbser.board.BoardAccessBean.ListArticle(BoardAccessBean.java:260)<br>
-at com.bbser.board.BoardBean.ListBySequence(BoardBean.java:82)<br>
-at _jsp._listarticle__jsp._jspService(_listarticle__jsp.java:97)<br>
-at com.bbser.board.BoardBean.ListBySequence(BoardBean.java:82)<br>
-at _jsp._listarticle__jsp._jspService(_listarticle__jsp.java:97)<br>
-at com.caucho.jsp.JavaPage.service(JavaPage.java:89)<br>
-at com.caucho.jsp.JavaPage.subservice(JavaPage.java:83)<br>
-at com.caucho.jsp.Page.service(Page.java:303)<br>
-at com.caucho.server.http.Invocation.service(Invocation.java:230)<br>
-at 
-com.caucho.server.http.CacheInvocation.service(CacheInvocation.java:142)<br>
-at com.caucho.server.http.HttpRequest.handleRequest(HttpRequest.java:205)<br>
-at 
-com.caucho.server.http.HttpRequest.handleConnection(HttpRequest.java:144)<br>
-at com.caucho.server.TcpConnection.run(TcpConnection.java:133)<br>
-at java.lang.Thread.run(Thread.java:498)<br>
-Thu Oct 19 06:21:14 CST 2000: OSN=4824,NOTP=20<br>
-Thu Oct 19 06:21:14 CST 2000:<br>
-java.sql.SQLException: Protocol violation<br>
-at java.sql.SQLException.&lt;init&gt;(SQLException.java:45)<br>
-at oracle.jdbc.dbaccess.DBError.throwSqlException(DBError.java:114)<br>
-at oracle.jdbc.dbaccess.DBError.throwSqlException(DBError.java:156)<br>
-at oracle.jdbc.dbaccess.DBError.check_error(DBError.java:803)<br>
-at oracle.jdbc.ttc7.Oclose.receive(Oclose.java:130)<br>
-at oracle.jdbc.ttc7.TTC7Protocol.close(TTC7Protocol.java:493)<br>
-at oracle.jdbc.driver.OracleStatement.close(OracleStatement.java:467)<br>
-at com.bbser.board.BoardAccessBean.ListArticle(BoardAccessBean.java:266)<br>
-at com.bbser.board.BoardBean.ListBySequence(BoardBean.java:82)<br>
-at _jsp._listarticle__jsp._jspService(_listarticle__jsp.java:97)<br>
-at com.caucho.jsp.JavaPage.service(JavaPage.java:89)<br>
-at com.caucho.jsp.JavaPage.subservice(JavaPage.java:83)<br>
-at com.caucho.jsp.Page.service(Page.java:303)<br>
-at com.caucho.server.http.Invocation.service(Invocation.java:230)<br>
-at 
-com.caucho.server.http.CacheInvocation.service(CacheInvocation.java:142)<br>
-at com.caucho.server.http.HttpRequest.handleRequest(HttpRequest.java:205)<br>
-at 
-com.caucho.server.http.HttpRequest.handleConnection(HttpRequest.java:144)<br>
-at com.caucho.server.TcpConnection.run(TcpConnection.java:133)<br>
-at java.lang.Thread.run(Thread.java:498)<br>
-Thu Oct 19 06:21:14 CST 2000: BoardListBean Created<br>
-Thu Oct 19 06:21:27 CST 2000: BoardListBean Created<br>
-Thu Oct 19 06:21:27 CST 2000: End Load,ClassNum=9<br>
-Thu Oct 19 06:21:27 CST 2000: kkk select * from BoardList_TB order by EBoardName<br>
-Thu Oct 19 06:21:27 CST 2000: connect<br>
-Thu Oct 19 06:21:27 CST 2000: executed!<br>
-Thu Oct 19 06:21:27 CST 2000: BoardNum=203<br>
-Thu Oct 19 06:21:27 CST 2000: BoardNum=203<br>
-Thu Oct 19 06:21:27 CST 2000: BoardListBean Created<br>
-<br>
-</p>
-<p>　</p>
-　
-
-<!--mstheme--></font><!--msnavigation--></td></tr><!--msnavigation--></table><!--msnavigation--><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td><!--mstheme--><font face="宋体">
-
-<p align="right">
-
-<!--mstheme--></font></td></tr><!--msnavigation--></table></body>
-
-</html>
+Sounds like a possible dead lock.

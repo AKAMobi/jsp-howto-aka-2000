@@ -2,68 +2,32 @@
 
 <head>
 <meta http-equiv="Content-Language" content="zh-cn">
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<meta http-equiv="Content-Type" content="text/html; charset=utf8">
 <meta name="GENERATOR" content="Microsoft FrontPage 4.0">
 <meta name="ProgId" content="FrontPage.Editor.Document">
 <meta name="Microsoft Theme" content="blank 000, default">
 <meta name="Microsoft Border" content="tlb, default">
 </head>
 
-<body bgcolor="#FFFFFF" text="#000000" link="#999999" vlink="#990000" alink="#666666"><!--msnavigation--><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td><!--mstheme--><font face="ËÎÌå">
+<body bgcolor="#FFFFFF" text="#000000" link="#999999" vlink="#990000" alink="#666666"><!--msnavigation--><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td><!--mstheme--><font face="å®‹ä½“">
 
-<p align="center"><font size="6"><strong><img src="_derived/use_dbpool.htm_cmp_blank000_bnr.gif" width="600" height="60" border="0" alt="Ê¹ÓÃÁ¬½Ó³Ø"></strong></font><br>
-<a href="dbpool_conf.htm"><img src="../_derived/back_cmp_blank000_back.gif" width="100" height="20" border="0" alt="ÉÏÒ»Ò³" align="middle"></a> <a href="../index.htm"><img src="../_derived/home_cmp_blank000_home.gif" width="100" height="20" border="0" alt="Ö÷Ò³" align="middle"></a> <a href="index.htm"><img src="../_derived/up_cmp_blank000_up.gif" width="100" height="20" border="0" alt="ÉÏÒ»²ã" align="middle"></a></p>
+<p align="center"><font size="6"><strong><img src="_derived/use_dbpool.htm_cmp_blank000_bnr.gif" width="600" height="60" border="0" alt="ä½¿ç”¨è¿æ¥æ± "></strong></font><br>
+<a href="dbpool_conf.htm"><img src="../_derived/back_cmp_blank000_back.gif" width="100" height="20" border="0" alt="ä¸Šä¸€é¡µ" align="middle"></a> <a href="../index.htm"><img src="../_derived/home_cmp_blank000_home.gif" width="100" height="20" border="0" alt="ä¸»é¡µ" align="middle"></a> <a href="index.htm"><img src="../_derived/up_cmp_blank000_up.gif" width="100" height="20" border="0" alt="ä¸Šä¸€å±‚" align="middle"></a></p>
 
-<!--mstheme--></font></td></tr><!--msnavigation--></table><!--msnavigation--><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td valign="top" width="1%"><!--mstheme--><font face="ËÎÌå">
+<!--mstheme--></font></td></tr><!--msnavigation--></table><!--msnavigation--><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td valign="top" width="1%"><!--mstheme--><font face="å®‹ä½“">
 
 
 
-<!--mstheme--></font></td><td valign="top" width="24"></td><!--msnavigation--><td valign="top"><!--mstheme--><font face="ËÎÌå">
+<!--mstheme--></font></td><td valign="top" width="24"></td><!--msnavigation--><td valign="top"><!--mstheme--><font face="å®‹ä½“">
 
-<p>ÅäÖÃºÃ×Ô¼ºµÄÊı¾İ¿âºó£¨ÒòÎªĞŞ¸ÄÁËconf/resin.conf£¬ËùÒÔresinĞèÒª´ÓĞÂÆô¶¯²Å»á¸üĞÂ£¬Ê¹ÓÃÃüÁî/usr/local/resin/bin/httpd.sh 
-stop;/usr/local/resin/bin/httpd.sh start£©£¬¿ÉÒÔÊ¹ÓÃÏÂÃæµÄJSPÒ³Ãæ½øĞĞ²âÊÔ£º</p>
+<p>é…ç½®å¥½è‡ªå·±çš„æ•°æ®åº“åï¼ˆå› ä¸ºä¿®æ”¹äº†conf/resin.confï¼Œæ‰€ä»¥resinéœ€è¦ä»æ–°å¯åŠ¨æ‰ä¼šæ›´æ–°ï¼Œä½¿ç”¨å‘½ä»¤/usr/local/resin/bin/httpd.sh 
+stop;/usr/local/resin/bin/httpd.sh startï¼‰ï¼Œå¯ä»¥ä½¿ç”¨ä¸‹é¢çš„JSPé¡µé¢è¿›è¡Œæµ‹è¯•ï¼š</p>
 <p>cd /usr/local/resin/doc<br>
-½¨Á¢dbpool_test.jsp²¢ÊäÈëÈçÏÂ´úÂë£º</p>
+å»ºç«‹dbpool_test.jspå¹¶è¾“å…¥å¦‚ä¸‹ä»£ç ï¼š</p>
 <p><font face="Comic Sans MS">&lt;%@page import=&quot;java.sql.*&quot; %&gt;<br>
 &lt;%@page import=&quot;javax.sql.*&quot; %&gt;<br>
 &lt;%@page import=&quot;com.caucho.sql.*&quot; %&gt;<br>
 &lt;html&gt;<br>
 &lt;body&gt;<br>
 &lt;%<br>
-</font><font face="Comic Sans MS"><b>£ £ Connection conn;<br>
-</b></font><br>
-<font face="Comic Sans MS">//</font>ÕâÀïµÄ <font face="Comic Sans MS">ORCL </font>Ó¦¸ÃÊÇÄãµÄ 
-<font face="Comic Sans MS">conf/resin.conf </font>ÖĞ <font face="Comic Sans MS">DBPool 
-</font>ÅäÖÃ²¿·ÖÖĞµÄ <font face="Comic Sans MS">ID </font>µÄÖµ<br>
-<font face="Comic Sans MS">£ £ try{conn = 
-DBPool.getPool(&quot;oraz&quot;).getConnection();}<br>
-£ £ catch(Exception e){<br>
-£ £ £ £ out.println( e.getMessage() );<br>
-£ £ £ £ return;<br>
-£ £ }<br>
-£ £ try{<br>
-£ £ £ £ Statement stmt = conn.createStatement();<br>
-£ £ £ £ ResultSet rs = stmt.executeQuery( &quot;select cname from 
-data_country_tb&quot; );<br>
-£ £ £ £ rs.next();<br>
-£ £ £ £ out.println( rs.getString(&quot;CName&quot;) );<br>
-£ £ £ £ rs.close();<br>
-£ £ £ £ stmt.close();<br>
-£ £ }catch( Exception e ){<br>
-£ £ £ £ out.println( e.getMessage() );<br>
-£ £ £ £ out.println( &quot;Err Occured&quot; );<br>
-£ £ }finally{<br>
-£ £ £ £ try{conn.close();}catch(Exception e){}<br>
-£ £ }</font></p>
-<p><font face="Comic Sans MS">%&gt;<br>
-&lt;/body&gt;<br>
-&lt;/html&gt;</font></p>
-¡¡
-
-<!--mstheme--></font><!--msnavigation--></td></tr><!--msnavigation--></table><!--msnavigation--><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td><!--mstheme--><font face="ËÎÌå">
-
-<p align="right">
-
-<!--mstheme--></font></td></tr><!--msnavigation--></table></body>
-
-</html>
+</font><font face="Comic Sans MS"><b>
